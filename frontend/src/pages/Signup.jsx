@@ -21,7 +21,7 @@ export default function Signup() {
     try {
       const res = await API.post("/auth/signup", formData);
       console.log(res.data);
-      alert("Signup successful! Please log in.");
+
       navigate("/login");
     } catch (err) {
       console.error(err?.response?.data?.message || err.message);
