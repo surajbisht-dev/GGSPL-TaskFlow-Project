@@ -24,10 +24,11 @@ export default function Signup() {
       localStorage.setItem("token", res.data.token);
       navigate("/dashboard");
     } catch (err) {
-      console.error(err.response.data.message);
-      alert(err.response.data.message || "Signup failed");
+      console.error(err?.response?.data?.message || err.message);
+      alert(err?.response?.data?.message || "Signup failed");
     }
   };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-900 p-6">
       <motion.div
